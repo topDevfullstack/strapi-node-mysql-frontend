@@ -108,6 +108,14 @@
   margin-left: 0.5rem;
 }
 
+.success {
+  background-color: darkcyan;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -127,3 +135,4 @@
     filter: invert(1);
   }
 }
+
