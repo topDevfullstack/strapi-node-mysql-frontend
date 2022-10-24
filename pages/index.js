@@ -11,7 +11,8 @@ const Home = ({ videos, error }) => {
       const res = await axios.get('http://localhost:1337/api/ftp-scan');
       const videos = res.data;
       console.log(videos);
-      setList(videos.data.attributes);
+      setList(videos);
+      console.log('list',list);
     } catch (error) {
       console.log('error');
       return { error };
@@ -38,14 +39,14 @@ const Home = ({ videos, error }) => {
         <div className={styles.grid1}>
           <button className={styles.success} onClick={handleClick}>Upload</button>
         </div>
-        {/* <table className={styles.grid1}>
+        <table >
           {list && list.map(item => (
             <tr key={item.id}>
               <td>{item.title}</td>
               <td>{item.provider}</td>
             </tr>
           ))}
-        </table> */}
+        </table>
       </div>
     </div>
   );
