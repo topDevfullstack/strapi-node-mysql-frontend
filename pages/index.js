@@ -39,11 +39,11 @@ const Home = ({ videos, error }) => {
         <div className={styles.grid1}>
           <button className={styles.success} onClick={handleClick}>Upload</button>
         </div>
-        <table >
+        <table className={styles.table}>
           {list && list.map(item => (
-            <tr key={item.id}>
-              <td>{item.title}</td>
-              <td>{item.provider}</td>
+            <tr key={item.id} className={styles.tr}>
+              <td className={styles.td}>{item.title}</td>
+              <td className={styles.td}>{item.provider}</td>
             </tr>
           ))}
         </table>
