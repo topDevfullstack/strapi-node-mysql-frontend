@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./logged-in.module.scss";
-import { Button3 } from "../../util/Button/Button";
+import { Button3 } from "../../Button/Button";
 
 export const LoggedIn = () => {
   return (

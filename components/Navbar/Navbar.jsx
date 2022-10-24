@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Toggle } from "../util/Toggle/index";
+import { Toggle } from "../Toggle/index";
 import style from "./navbar.module.scss";
 
 export const Navbar = (props) => {
