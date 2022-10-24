@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Card from "../components/Card";
 import styles from '../styles/Home.module.css'
 
 const Home = ({ videos, error }) => {
@@ -7,11 +8,18 @@ const Home = ({ videos, error }) => {
   }
   return (
     <div className={styles.container}>
-      <ul>
+      {/* <ul> */}
         {videos.data.map(video => (
-          <li key={video.id}>{video.attributes.title}</li>
+          // <li key={video.id}>
+            <Card
+              image="/images/bootcamp1.jpg"
+              title={video.attributes.title}
+              description="Hmtl 5 and CSS3, Sass/Scss, Bootstrap and Tailwind, Adobe XD, Git, Github, Devtools"
+              link="https://developer.mozilla.org/en-US/docs/Learn"
+            />
+          // </li>
         ))}
-      </ul>
+      {/* </ul> */}
       <button className={styles.success}>Upload</button>
     </div>
   );
