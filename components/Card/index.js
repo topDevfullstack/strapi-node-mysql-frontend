@@ -20,7 +20,7 @@ const UiButton = props => {
 class ButtonBox extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.likeIsClicked);
+    // console.log(props.likeIsClicked);
     this.state = {
       likeIsClicked: props.likeIsClicked
 
@@ -48,7 +48,7 @@ class ButtonBox extends React.Component {
 
 const UiCard = props => {
   let {video, content} = props;
-  console.log('video',props);
+  // console.log('video',props);
   const vvv = 'http://localhost:1337' + video.url;
   return (
     <div class={styles.wrapper}>
