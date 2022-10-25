@@ -4,7 +4,7 @@ import SocialCard from "../components/Card";
 import styles from '../styles/Home.module.css'
 
 const Home = ({ videos, error }) => {
-  const [list, setList] = useState({});
+  const [list, setList] = useState([]);
 
   async function handleClick () {
     try {
@@ -17,6 +17,11 @@ const Home = ({ videos, error }) => {
       console.log('error');
       return { error };
     }
+  }
+
+  async function handleUpload (e) {
+    console.log('Upload', e);
+
   }
 
   if (error) {
@@ -40,12 +45,15 @@ const Home = ({ videos, error }) => {
           <button className={styles.success} onClick={handleClick}>Upload</button>
         </div>
         <table className={styles.table}>
-          {list && list.map(item => (
-            <tr key={item.id} className={styles.tr}>
-              <td className={styles.td}>{item.title}</td>
-              <td className={styles.td}>{item.provider}</td>
-            </tr>
-          ))}
+          <thead><tr><th>Title</th><th>Provider</th></tr></thead>
+          <tbody>
+            {list && list.map(item => (
+              <tr key={item.id} className={styles.tr} onClick={handleUpload(item.id)}>
+                <td className={styles.td}>{item.title}</td>
+                <td className={styles.td}>{item.provider}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
