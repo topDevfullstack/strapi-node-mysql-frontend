@@ -51,7 +51,7 @@ const Home = ({ videos, error }) => {
               <tr key={item.id} data-item={item} className={styles.tr}>
                 <td className={styles.td}>{item.title}</td>
                 <td className={styles.td}>{item.provider}</td>
-                <td><button onClick={handleUpload(item)}>Upload</button></td>
+                <td><button onClick={handleUpload}>Upload</button></td>
               </tr>
             ))}
           </tbody>
