@@ -42,15 +42,16 @@ const Home = ({ videos, error }) => {
           ))}
         </div>
         <div className={styles.grid1}>
-          <button className={styles.success} onClick={handleClick}>Upload</button>
+          <button className={styles.success} onClick={handleClick}>FTP Directory List</button>
         </div>
         <table className={styles.table}>
           <thead><tr><th>Title</th><th>Provider</th></tr></thead>
           <tbody>
             {list && list.map(item => (
-              <tr key={item.id} className={styles.tr} onClick={handleUpload(item.id)}>
+              <tr key={item.id} data-item={item} className={styles.tr}>
                 <td className={styles.td}>{item.title}</td>
                 <td className={styles.td}>{item.provider}</td>
+                <td><button onClick={handleUpload(item)}>Upload</button></td>
               </tr>
             ))}
           </tbody>
